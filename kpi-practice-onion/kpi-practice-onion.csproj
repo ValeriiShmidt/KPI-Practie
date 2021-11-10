@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>kpi_practice_onion</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="10.1.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.6" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\KpiPractice.Core\KpiPractice.Core.csproj" />
+      <ProjectReference Include="..\KpiPractice.Data\KpiPractice.Data.csproj" />
+      <ProjectReference Include="..\KpiPractice.Orchestrators\KpiPractice.Orchestrators.csproj" />
+    </ItemGroup>
+
+</Project>
