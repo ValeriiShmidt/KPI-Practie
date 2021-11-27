@@ -24,7 +24,7 @@ namespace KpiPractice.Tests
             _client = _factory.CreateClient();
         }
         [Test]
-        public async Task shopsController_GetById_ReturnsShopModel()
+        public async Task ShopsController_GetById_ReturnsShopModel()
         {
             var httpResponse = await _client.GetAsync(RequestUrl + 1);
             
@@ -57,7 +57,7 @@ namespace KpiPractice.Tests
             }
         }
         [Test]
-        public async Task shopsController_Update_UpdatesShopInDatabase()
+        public async Task ShopsController_Update_UpdatesShopInDatabase()
         {
             var shop = new Orchestrators.Shops.Shop{Id = 1, Count = 1843};
             var content = new StringContent(await JsonConvert.SerializeObjectAsync(shop), Encoding.UTF8, "application/json");
