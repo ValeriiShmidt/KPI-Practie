@@ -22,7 +22,7 @@ namespace KpiPractice.Tests
             _client = _factory.CreateClient();
         }
         [Test]
-        public async Task goodsController_GetById_ReturnsGoodModel()
+        public async Task GoodsController_GetById_ReturnsGoodModel()
         {
             var httpResponse = await _client.GetAsync(RequestUrl + 1);
             
@@ -39,7 +39,7 @@ namespace KpiPractice.Tests
             Assert.AreEqual(332412, good.Sum);
         }
         [Test]
-        public async Task goodsController_Add_AddsGoodToDatabase()
+        public async Task GoodsController_Add_AddsGoodToDatabase()
         {
             var good = new KpiPractice.Orchestrators.Goods.Good(){ Name = "asdfas", Brand = "dsfa", Price = 1234123, Category = "asdf", Description = "asdf", Sum = 124242};
             var content = new StringContent(JsonConvert.SerializeObject(good), Encoding.UTF8, "application/json");
@@ -64,7 +64,7 @@ namespace KpiPractice.Tests
             }
         }
         [Test]
-        public async Task goodsController_Update_UpdatesGoodInDatabase()
+        public async Task GoodsController_Update_UpdatesGoodInDatabase()
         {
             var good = new KpiPractice.Orchestrators.Goods.Good{Id = 1, Sum = 1843};
             var content = new StringContent(await JsonConvert.SerializeObjectAsync(good), Encoding.UTF8, "application/json");
